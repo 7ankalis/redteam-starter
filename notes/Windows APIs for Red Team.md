@@ -7,7 +7,8 @@
 ---
 Before going in further I want to understand in my own way the basic idea of the evasion techniques mentioned above as a reference for me later to test my understanding.
 - Hooking: It is like a proxy that the AV//EDR does to see whether the action/intent of the program is malicious or not. 
-  ![[api hooking.png]]
+  ![API](https://github.com/7ankalis/redteam-starter/blob/main/images/api%20hooking.png)
+  
   This is a scheme that describes how it is done at the low-level. [Further read](https://www.ired.team/offensive-security/defense-evasion/bypassing-cylance-and-other-avs-edrs-by-unhooking-windows-apis#what-is-hooking) So unhooking is "breaking" that link between the EDR and the syscall and move on further with our attack without being detected.
 - Syscall stubs: They are the blocks of Assembly code (maybe not only assembly, we never know) that get executed in the transition between user mode and kernel mode. 
 - NTDLL remapping: `NTDLL` is the user-mode face of the Windows kernel. NTDLL remapping is unmapping the current (hooked) version of `ntdll.dll` and mapping a fresh clean copy of it from disk into memory.
