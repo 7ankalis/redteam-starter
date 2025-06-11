@@ -24,7 +24,7 @@ They come in two categories:
 So User Mode calls for APIs and the Kernel Mode implements these APIs.
 ## API Layers: Win32, NT and Syscalls
 I tried to summarize them in a scheme to remember it:
-![APIs](../apis.png)
+![APIs](../images/apis.png)
 
 1. Win323 API, which are functions found in kernnel323.dll and user32.dll. It is a "high level" API that calls for, for example, `OpenProcess` function.
 2. NT API, which is a low level API found in ntdll.dll, represents a direct wrapper of syscalls. contains functions that start with `Nt` or `Zw`. Follows the previous `OpenProcess` call to call the `NtOpenProcess` function. Its direct contact with syscalls makes it a target for us.
@@ -56,7 +56,7 @@ By now, you get the idea: This is a target. This dynamic nature makes me greedy 
 As the PE executable uses the IAT, the DLLs use the **Export Address Table**. It lists all the functions that the DLL offers to other programs.
 So, when this DLL is called, the app can use the `getProcAddress()` function or let the Windows Loaded do the job and resolve the function names or [ordinals](#windows-apis-ordinals) declared in the DLL's EAT.
 
-![IAT and EAT](../iat-eat.png)
+![IAT and EAT](../images/iat-eat.png)
 
 
 ---
@@ -574,7 +574,7 @@ So we're nearly over. We still have one thing: Calling `NtQueryInformationProces
 
 This took me a lot of research and time to understand what is happening and why the fuck is the code structured like that. But worth it, definitely. Here is a small graph:
 
-![NtQueryInfo](../NtQueryInformationProcess.svg)
+![NtQueryInfo](../images/NtQueryInformationProcess.svg)
 And here is the final provided code:
 
 ```cpp
