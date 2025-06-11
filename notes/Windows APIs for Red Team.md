@@ -1,3 +1,4 @@
+These were taken while learning from ![Windows API for Red Team Introduction](https://redteamleaders.coursestack.com/courses/96e8cffc-ac6e-4605-b7e1-39c6c26bd2e8) Course. Which really simplified some concepts and terms that scared me for some time. But not anymore :D
 # 0. Objectives
 - [ ] The structure and internals of Win32 and NT APIs.
 - [ ] Develop Red Team tools in C++ and Assembly.
